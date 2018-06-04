@@ -16,11 +16,6 @@ $(document).ready(function() {
         rupeeSound.volume=1;
         rupeeSound.autoPlay=false;
         rupeeSound.preLoad=true;
-    var success = document.createElement("audio");
-        success.src="assets/audio/success.wav";
-        success.volume=1;
-        success.autoPlay=false;
-        success.preLoad=true;
     
     function reset() {
         total = 0;
