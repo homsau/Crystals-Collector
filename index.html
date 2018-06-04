@@ -15,7 +15,9 @@
 </head>
 
 <body>
-
+    <audio autoplay loop>
+        <source src="assets/audio/kakariko-village.mp3" type="audio/mpeg">
+    </audio>
     <h1 style="text-align: center;">Crystals Collector</h1>
     <p></p>
 
@@ -24,26 +26,16 @@
             <span id="wins">Wins: 0</span><span id="losses">Losses: 0</span>
         </div>
     <div class="rupees">
-        <span id="green-rupee"><img src="assets/images/green-rupee.png" width="20%"></span>
-        <span id="blue-rupee"><img src="assets/images/blue-rupee.png" width="20%"></span>
-        <span id="red-rupee"><img src="assets/images/red-rupee.png" width="20%"></span>
-        <span id="purple-rupee"><img src="assets/images/purple-rupee.png" width="20%"></span>
+        <span id="green-rupee"><img class="playSound" src="assets/images/green-rupee.png" width="20%"></span>
+        <span id="blue-rupee"><img class="playSound" src="assets/images/blue-rupee.png" width="20%"></span>
+        <span id="red-rupee"><img class="playSound" src="assets/images/red-rupee.png" width="20%"></span>
+        <span id="purple-rupee"><img class="playSound" src="assets/images/purple-rupee.png" width="20%"></span>
     </div>
     <div class="total">
         <h2 style="text-align:center;">Your total score is:<br>
-            <span id="finalTotal"></span>
+            <span id="finalTotal">&nbsp;</span>
         </h2>
     </div>
-    
-
-<script type="text/javascript">
-  
-
-    
-    
-
-</script>
-
 </body>
 
 </html>
