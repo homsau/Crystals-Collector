@@ -3,67 +3,139 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Word Guess Game
+    <title>Crystals Collector
     </title>
     <!-- Added a link to Style-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Added a link to JavaScript-->
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/javascript/game.js"></script>-->
 </head>
 
 <body>
 
-    <h1>Word Guess Game</h1>
-    <p>Guess the Super Smash Bros. character</p>
+    <h1 style="text-align: center;">Crystals Collector</h1>
+    <p></p>
 
-    <div id="word"></div>
+    <div class="jumbotron" id="number" style="text-align:center;font-size:100px;padding:0;"></div>
+    <div class="jumbotron results">
+            <span id="wins"></span><span id="losses"></span>
+        </div>
+    <div class="rupees">
+        <span id="green-rupee"><img src="assets/images/green-rupee.png" width="150px"></span>
+        <span id="blue-rupee"><img src="assets/images/blue-rupee.png" width="150px"></span>
+        <span id="red-rupee"><img src="assets/images/red-rupee.png" width="150px"></span>
+        <span id="purple-rupee"><img src="assets/images/purple-rupee.png" width="150px"></span>
+    </div>
+    <div class="total">
+        <h2>Your total score is:
+            <span id="finalTotal"></span>
+        </h2>
+    </div>
+    
 
 <script type="text/javascript">
   
+    $(document).ready(function() {
+    
     // Creates variables
-    /*var characterList = "Mario, Donkey Kong, Link, Samus Aran, Yoshi, Kirby, Fox, Pikachu, Ness, Captain Falcon, Bowser, Peach, Ice Climbers, Zelda, Sheik, Luiki, Jigglypuff, Mewtwo, Marth, Mr Game And Watch, Dr Mario, Ganondorf, Falco, Young Link, Pichu, Roy".split(", ");*/
-    var characterList = "mario, donkey kong, link, samus aran, yoshi, kirby, fox, pikachu, ness, captain falcon, bowser, peach, ice climbers, zelda, sheik, luigi, jigglypuff, mewtwo, marth, mr game and watch, dr mario, ganondorf, falco, young link, pichu, roy".split(", ");
-    var word = characterList[Math.floor(Math.random() * characterList.length)];
-    var guessWord = [];
-    var guesses = 15;
-
-    var blanks = [];
-
-    for (var i=0; i<word.length; i++) {
-        if (word[i] === " ") {
-            blanks.push("&nbsp;");
-        } else {
-            blanks.push(" _ ");
-        }    
-    }
-    console.log(word);
-
-    document.getElementById("word").innerHTML = blanks.join(" ");
+    var randomNumber = Math.floor(Math.random()*101+19);
+    console.log(randomNumber);
+    var total = 0;
+    var wins = 0;
+    var losses = 0;
+    var green = Math.floor(Math.random()*11+1);
+    var blue = Math.floor(Math.random()*11+1);
+    var red = Math.floor(Math.random()*11+1);
+    var purple = Math.floor(Math.random()*11+1);
+    console.log(green, blue, red, purple);
     
-    document.onkeyup = function(event) {
-        var key = event.key;
-        console.log(key);
-    
-        if (event.keyCode >= 65 && event.keyCode <= 90) {
-            for (var i=0; i<word.length; i++) {
-                if (key === word[i]) {
-                    console.log("You guessed a correct letter");
-                    blanks[i] = key;
-                    console.log(blanks);
-                    document.getElementById("word").innerHTML = blanks.join(" ");
-                } else if (key != word[i]) {
-                    guesses--;
-                    if (guesses === 0) {
-                        console.log("you lose!");
-                    } else {
-                        console.log("you only have " + guesses + " left");
-                    }
-                }
-            }
+
+        function reset() {
+            total = 0;
+            randomNumber = Math.floor(Math.random()*101+19);
+            green = Math.floor(Math.random()*11+1);
+            blue = Math.floor(Math.random()*11+1);
+            red = Math.floor(Math.random()*11+1);
+            purple = Math.floor(Math.random()*11+1);
+            $('#number').text(randomNumber);
+            $('#finalTotal').text(total);
+            console.log(green, blue, red, purple);
+            $('#wins').text("Wins: " + wins);
+            $('#losses').text("Losses: " + losses);
         }
-    };
+        //reset();
+        
+        $('#number').text(randomNumber);
+        console.log(randomNumber);
+
+        // Register random numbers to each color rupee
+        $('#green-rupee').on ('click', function() {
+        total = total + green;
+        console.log("New total= " + total);
+        $('#finalTotal').text(total);
+            if (total === randomNumber) {
+                console.log("nice");
+                wins++;
+                reset();
+            }
+            else if (total > randomNumber) {
+                console.log("you lose");
+                losses++;
+                reset();
+            }
+        })
+        $('#blue-rupee').on ('click', function() {
+        total = total + blue;
+        console.log("New total= " + total);
+        $('#finalTotal').text(total);
+            if (total === randomNumber) {
+                console.log("nice");
+                wins++;
+                reset();
+            }
+            else if (total > randomNumber) {
+                console.log("you lose");
+                losses++;
+                reset();
+            }
+        })
+        $('#red-rupee').on ('click', function() {
+        total = total + red;
+        console.log("New total= " + total);
+        $('#finalTotal').text(total);
+            if (total === randomNumber) {
+                console.log("nice");
+                wins++;
+                reset();
+            }
+            else if (total > randomNumber) {
+                console.log("you lose");
+                losses++;
+                reset();
+            }
+        })
+        $('#purple-rupee').on ('click', function() {
+        total = total + purple;
+        console.log("New total= " + total);
+        $('#finalTotal').text(total);
+            if (total === randomNumber) {
+                console.log("nice");
+                wins++;
+                reset();
+            }
+            else if (total > randomNumber) {
+                console.log("you lose");
+                losses++;
+                reset();
+            }
+        });
+        
+    });
+    
+    
 
 </script>
 

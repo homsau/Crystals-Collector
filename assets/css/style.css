@@ -1,0 +1,37 @@
+html {
+    background: url('../images/background.jpg');
+    background-size:  100%;
+}
+body {
+    width: 800px;
+    background-color: rgba(255,255,255,0.5) !important;
+    padding: 20px;
+    margin: 50px auto !important;
+}
+.jumbotron {
+    background: transparent !important;
+}
+.jumbotron:not(.results) {
+    margin-bottom: 0 !important;
+}
+.rupees {
+    text-align: center;
+}
+.rupees img {
+    width: 100px;
+    margin: 0 20px;
+}
+.jumbotron.results {
+    padding: 0 !important;
+}
+.results {
+    text-align: center;
+}
+.results #wins {
+    width: 25%;
+    display: inline-block;
+}
+.results #losses {
+    width: 25%;
+    display: inline-block;
+}
