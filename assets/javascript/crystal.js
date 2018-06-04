@@ -11,6 +11,8 @@ $(document).ready(function() {
     var red = Math.floor(Math.random()*11+1);
     var purple = Math.floor(Math.random()*11+1);
     console.log(green, blue, red, purple);
+    var audio = new Audio('assets/audio/kakariko-village.mp3');
+    
     var rupeeSound = document.createElement("audio");
         rupeeSound.src="assets/audio/rupee.wav";
         rupeeSound.volume=1;
@@ -32,6 +34,7 @@ $(document).ready(function() {
     }
     
     function noise() {
+        audio.play();
         $(".playSound").click(function() {
             rupeeSound.play();
         });
