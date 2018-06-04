@@ -1,1 +1,1 @@
-# Crystals-Collector
+# Psychic-Game

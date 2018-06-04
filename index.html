@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Word Guess Game
+    </title>
+    <!-- Added a link to Style-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Added a link to JavaScript-->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+
+    <h1>Word Guess Game</h1>
+    <p>Guess the Super Smash Bros. character</p>
+
+    <div id="word"></div>
+
+<script type="text/javascript">
+  
+    // Creates variables
+    /*var characterList = "Mario, Donkey Kong, Link, Samus Aran, Yoshi, Kirby, Fox, Pikachu, Ness, Captain Falcon, Bowser, Peach, Ice Climbers, Zelda, Sheik, Luiki, Jigglypuff, Mewtwo, Marth, Mr Game And Watch, Dr Mario, Ganondorf, Falco, Young Link, Pichu, Roy".split(", ");*/
+    var characterList = "mario, donkey kong, link, samus aran, yoshi, kirby, fox, pikachu, ness, captain falcon, bowser, peach, ice climbers, zelda, sheik, luigi, jigglypuff, mewtwo, marth, mr game and watch, dr mario, ganondorf, falco, young link, pichu, roy".split(", ");
+    var word = characterList[Math.floor(Math.random() * characterList.length)];
+    var guessWord = [];
+    var guesses = 15;
+
+    var blanks = [];
+
+    for (var i=0; i<word.length; i++) {
+        if (word[i] === " ") {
+            blanks.push("&nbsp;");
+        } else {
+            blanks.push(" _ ");
+        }    
+    }
+    console.log(word);
+
+    document.getElementById("word").innerHTML = blanks.join(" ");
+    
+    document.onkeyup = function(event) {
+        var key = event.key;
+        console.log(key);
+    
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
+            for (var i=0; i<word.length; i++) {
+                if (key === word[i]) {
+                    console.log("You guessed a correct letter");
+                    blanks[i] = key;
+                    console.log(blanks);
+                    document.getElementById("word").innerHTML = blanks.join(" ");
+                } else if (key != word[i]) {
+                    guesses--;
+                    if (guesses === 0) {
+                        console.log("you lose!");
+                    } else {
+                        console.log("you only have " + guesses + " left");
+                    }
+                }
+            }
+        }
+    };
+
+</script>
+
+</body>
+
+</html>
