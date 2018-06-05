@@ -35,10 +35,13 @@ $(document).ready(function() {
     
     function noise() {
         audio.play();
+        audio.controls = true;
+        audio.loop = true;
         $(".playSound").click(function() {
             rupeeSound.play();
         });
     }
+    noise();
 
     $('#number').text(randomNumber);
     console.log(randomNumber);
