@@ -19,6 +19,7 @@ $(document).ready(function() {
         rupeeSound.autoPlay=false;
         rupeeSound.preLoad=true;
 
+    //reset the game after completed and redeclare rupee random valuables
     function reset() {
         total = 0;
         randomNumber = Math.floor(Math.random()*101+19);
@@ -33,6 +34,7 @@ $(document).ready(function() {
         $('#losses').text("Losses: " + losses);
     }
     
+    // Play audio (town music on loop and ruppee sound once)
     function noise() {
         audio.play();
         audio.loop = true;
@@ -46,7 +48,7 @@ $(document).ready(function() {
     console.log(randomNumber);
 
     // Register random numbers to each color rupee
-    $('#green-rupee').on ('click', function() {
+    $('#green-rupee').on('click', function() {
         noise();
         total = total + green;
         console.log("New total= " + total);
@@ -62,7 +64,7 @@ $(document).ready(function() {
             reset();
         }
     })
-    $('#blue-rupee').on ('click', function() {
+    $('#blue-rupee').on('click', function() {
         noise();
         total = total + blue;
         console.log("New total= " + total);
@@ -78,7 +80,7 @@ $(document).ready(function() {
             reset();
         }
     })
-    $('#red-rupee').on ('click', function() {
+    $('#red-rupee').on('click', function() {
         noise();
         total = total + red;
         console.log("New total= " + total);
@@ -94,7 +96,7 @@ $(document).ready(function() {
             reset();
         }
     })
-    $('#purple-rupee').on ('click', function() {
+    $('#purple-rupee').on('click', function() {
         noise();
         total = total + purple;
         console.log("New total= " + total);
