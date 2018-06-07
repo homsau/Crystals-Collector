@@ -19,6 +19,11 @@ $(document).ready(function() {
         rupeeSound.autoPlay=false;
         rupeeSound.preLoad=true;
     
+    window.setTimeout(zeroSeconds, 1000);
+    function zeroSeconds() {
+        audio.play();
+    }
+
     function reset() {
         total = 0;
         randomNumber = Math.floor(Math.random()*101+19);
