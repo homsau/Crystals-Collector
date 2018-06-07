@@ -13,10 +13,10 @@ $(document).ready(function() {
     console.log(green, blue, red, purple);
     var audio = new Audio('assets/audio/kakariko-village.mp3');
     var rupeeSound = document.createElement("audio");
-        rupeeSound.src="assets/audio/rupee.wav";
-        rupeeSound.volume=1;
-        rupeeSound.autoPlay=false;
-        rupeeSound.preLoad=true;
+        rupeeSound.src = "assets/audio/rupee.wav";
+        rupeeSound.volume = 1;
+        rupeeSound.autoPlay = false;
+        rupeeSound.preLoad = true;
 
     //reset the game after completed and redeclare rupee random valuables
     function reset() {
