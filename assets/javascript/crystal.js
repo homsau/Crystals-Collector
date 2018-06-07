@@ -18,11 +18,6 @@ $(document).ready(function() {
         rupeeSound.volume=1;
         rupeeSound.autoPlay=false;
         rupeeSound.preLoad=true;
-    
-    window.setTimeout(zeroSeconds, 1000);
-    function zeroSeconds() {
-        audio.play();
-    }
 
     function reset() {
         total = 0;
@@ -40,7 +35,6 @@ $(document).ready(function() {
     
     function noise() {
         audio.play();
-        audio.controls = true;
         audio.loop = true;
         $(".playSound").click(function() {
             rupeeSound.play();
