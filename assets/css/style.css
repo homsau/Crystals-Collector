@@ -18,13 +18,19 @@ body {
 }
 .jumbotron:not(.results) {
     margin-bottom: 0 !important;
+    text-align: center;
+    font-size: 100px;
+    padding: 0;
 }
 .rupees {
-    text-align: center;
+    width: 80%;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 .rupees img {
-    width: 13%;
-    margin: 0 20px;
+    width: 100%;
+    padding: 0 10%;
+    margin: 0 auto 20px;
 }
 .jumbotron.results {
     padding: 0 !important;
@@ -32,12 +38,4 @@ body {
 .results {
     text-align: center;
     font-size: 2em;
-}
-.results #wins {
-    width: 25%;
-    display: inline-block;
-}
-.results #losses {
-    width: 25%;
-    display: inline-block;
 }

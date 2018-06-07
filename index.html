@@ -24,20 +24,44 @@
         <p style="margin-bottom:0;">Each time when the game starts, the game will change the value of each crystal.</p>
     </div>
 
-    <div class="jumbotron" id="number" style="text-align:center;font-size:100px;padding:0;"></div>
-    <div class="jumbotron results">
-            <span id="wins">Wins: 0</span><span id="losses">Losses: 0</span>
+    
+    <div class="container">
+        <div class="jumbotron total" id="number"></div>
+        <div class="jumbotron results">
+            <div class="row">
+                <div class="col-md-6">
+                    <p id="wins">Wins: 0</p>
+                </div>
+                <div class="col-md-6">
+                    <p id="losses">Losses: 0</p>
+                </div>
+            </div>
         </div>
-    <div class="rupees">
-        <span id="green-rupee"><img class="playSound" src="assets/images/green-rupee.png" width="20%"></span>
-        <span id="blue-rupee"><img class="playSound" src="assets/images/blue-rupee.png" width="20%"></span>
-        <span id="red-rupee"><img class="playSound" src="assets/images/red-rupee.png" width="20%"></span>
-        <span id="purple-rupee"><img class="playSound" src="assets/images/purple-rupee.png" width="20%"></span>
     </div>
-    <div class="total">
-        <h2 style="text-align:center;">Your total score is:<br>
-            <span id="finalTotal">&nbsp;</span>
-        </h2>
+    <div class="container">
+        <div class="row rupees">
+            <div class="col-md-3">
+                <span id="green-rupee"><img class="playSound" src="assets/images/green-rupee.png"></span>
+            </div>
+            <div class="col-md-3">
+                <span id="blue-rupee"><img class="playSound" src="assets/images/blue-rupee.png"></span>
+            </div>
+            <div class="col-md-3">
+                <span id="red-rupee"><img class="playSound" src="assets/images/red-rupee.png"></span>
+            </div>
+            <div class="col-md-3">
+                <span id="purple-rupee"><img class="playSound" src="assets/images/purple-rupee.png"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container total">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="text-align:center;">Your total score is:<br>
+                    <span id="finalTotal">&nbsp;</span>
+                </h2>
+            </div>
+        </div>
     </div>
 </body>
 
