@@ -15,51 +15,17 @@
 </head>
 
 <body>
-    <h1 style="text-align: center;">Totally Trivial Trivia</h1>
-    <div style="background-color:rgba(255,255,255,0.5); padding:20px 20px 1rem;">
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four rupees below. By click one one you will add a specific amount to your total score.</p>
-        <p>You win the game by matching your total score to the random number, and you lose if your total score goes above the random number</p>
-        <p>The value of each rupee is hidden from you until you click on it.</p>
-        <p style="margin-bottom:0;">Each time when the game starts, the game will change the value of each crystal.</p>
-    </div>
+    <h1 style="text-align: center;">Halo Trivia!</h1>
 
-    
     <div class="container">
-        <div class="jumbotron total" id="number"></div>
         <div class="jumbotron results">
             <div class="row">
-                <div class="col-md-6">
-                    <p id="wins">Wins: 0</p>
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <div id="questions"></div>
+                    <div id="answers"></div>
                 </div>
-                <div class="col-md-6">
-                    <p id="losses">Losses: 0</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row rupees">
-            <div class="col-md-3">
-                <span id="green-rupee"><img class="playSound" src="assets/images/green-rupee.png"></span>
-            </div>
-            <div class="col-md-3">
-                <span id="blue-rupee"><img class="playSound" src="assets/images/blue-rupee.png"></span>
-            </div>
-            <div class="col-md-3">
-                <span id="red-rupee"><img class="playSound" src="assets/images/red-rupee.png"></span>
-            </div>
-            <div class="col-md-3">
-                <span id="purple-rupee"><img class="playSound" src="assets/images/purple-rupee.png"></span>
-            </div>
-        </div>
-    </div>
-    <div class="container total">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 style="text-align:center;">Your total score is:<br>
-                    <span id="finalTotal">&nbsp;</span>
-                </h2>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
