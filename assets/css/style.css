@@ -1,6 +1,41 @@
-li {
-    list-style-type: none;
+html {
+    background-image: url('../images/background.jpg');
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 0.25px 0.25px #fff;
 }
-#answers li input {
-    margin-right: 1em;
+body {
+    width: 800px;
+    max-width: 100%;
+    background-color: rgba(255,255,255,0.4) !important;
+    padding: 20px;
+    margin: 50px auto !important;
+}
+.jumbotron {
+    background: transparent !important;
+}
+.jumbotron:not(.results) {
+    margin-bottom: 0 !important;
+    text-align: center;
+    font-size: 100px;
+    padding: 0;
+}
+.rupees {
+    width: 80%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.rupees img {
+    width: 100%;
+    padding: 0 10%;
+    margin: 0 auto 20px;
+}
+.jumbotron.results {
+    padding: 0 !important;
+}
+.results {
+    text-align: center;
+    font-size: 2em;
 }
