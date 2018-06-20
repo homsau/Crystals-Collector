@@ -34,6 +34,8 @@ $(document).ready(function() {
     }
 
     $('#number').text(randomNumber);
+    noise(); // google gives this an error in the console because
+             // it hasn't been interacted with yet upon load.
     
     // Play audio (town music on loop and ruppee sound once)
     function noise() {
@@ -43,7 +45,6 @@ $(document).ready(function() {
             rupeeSound.play();
         });
     }
-    noise();
 
     // initialize audio after first click
     $('.rupees div span').on('click', function() {
