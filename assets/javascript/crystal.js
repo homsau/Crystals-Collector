@@ -2,7 +2,7 @@ $(document).ready(function() {
     
     // Creates variables
     var randomNumber = Math.floor(Math.random()*101+19);
-    console.log(randomNumber);
+    //console.log(randomNumber);
     var total = 0;
     var wins = 0;
     var losses = 0;
@@ -10,7 +10,7 @@ $(document).ready(function() {
     var blue = Math.floor(Math.random()*11+1);
     var red = Math.floor(Math.random()*11+1);
     var purple = Math.floor(Math.random()*11+1);
-    console.log(green, blue, red, purple);
+    //console.log(green, blue, red, purple);
     var audio = new Audio('assets/audio/kakariko-village.mp3');
     var rupeeSound = document.createElement("audio");
         rupeeSound.src = "assets/audio/rupee.wav";
@@ -28,10 +28,12 @@ $(document).ready(function() {
         purple = Math.floor(Math.random()*11+1);
         $('#number').text(randomNumber);
         $('#finalTotal').text(total);
-        console.log(green, blue, red, purple);
+        //console.log(green, blue, red, purple);
         $('#wins').text("Wins: " + wins);
         $('#losses').text("Losses: " + losses);
     }
+
+    $('#number').text(randomNumber);
     
     // Play audio (town music on loop and ruppee sound once)
     function noise() {
@@ -43,72 +45,46 @@ $(document).ready(function() {
     }
     noise();
 
-    $('#number').text(randomNumber);
-    console.log(randomNumber);
+    // initialize audio after first click
+    $('.rupees div span').on('click', function() {
+        noise();
+    });
+
+    // eliminate duplicated win lose function by making it a variable
+    // and calling it from the rupee clicks
+    function winLose() {
+        $('#finalTotal').text(total);
+        if (total === randomNumber) {
+            //console.log("nice");
+            wins++;
+            reset();
+        }
+        else if (total > randomNumber) {
+            //console.log("you lose");
+            losses++;
+            reset();
+        }
+    }
 
     // Register random numbers to each color rupee
     $('#green-rupee').on('click', function() {
-        noise();
         total = total + green;
-        console.log("New total= " + total);
-        $('#finalTotal').text(total);
-        if (total === randomNumber) {
-            console.log("nice");
-            wins++;
-            reset();
-        }
-        else if (total > randomNumber) {
-            console.log("you lose");
-            losses++;
-            reset();
-        }
+        //console.log("New total= " + total);
+        winLose();
     })
     $('#blue-rupee').on('click', function() {
-        noise();
         total = total + blue;
-        console.log("New total= " + total);
-        $('#finalTotal').text(total);
-        if (total === randomNumber) {
-            console.log("nice");
-            wins++;
-            reset();
-        }
-        else if (total > randomNumber) {
-            console.log("you lose");
-            losses++;
-            reset();
-        }
+        //console.log("New total= " + total);
+        winLose();
     })
     $('#red-rupee').on('click', function() {
-        noise();
         total = total + red;
-        console.log("New total= " + total);
-        $('#finalTotal').text(total);
-        if (total === randomNumber) {
-            console.log("nice");
-            wins++;
-            reset();
-        }
-        else if (total > randomNumber) {
-            console.log("you lose");
-            losses++;
-            reset();
-        }
+        //console.log("New total= " + total);
+        winLose();
     })
     $('#purple-rupee').on('click', function() {
-        noise();
         total = total + purple;
-        console.log("New total= " + total);
-        $('#finalTotal').text(total);
-        if (total === randomNumber) {
-            console.log("nice");
-            wins++;
-            reset();
-        }
-        else if (total > randomNumber) {
-            console.log("you lose");
-            losses++;
-            reset();
-        }
+        //console.log("New total= " + total);
+        winLose();
     });
 });
